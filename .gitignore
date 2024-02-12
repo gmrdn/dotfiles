@@ -1,0 +1,17 @@
+.DS_Store
+bat/
+configstore/
+fontforge/plugin
+gatsby/
+gcloud/
+ghorg/
+github-copilot/
+gitui/
+glab-cli/
+iterm2/
+lazygit/
+pgcli/
+wireshark/
+spacebar/
+yarn/
+nvim/

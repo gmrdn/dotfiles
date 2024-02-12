@@ -21,7 +21,7 @@ yabai -m config                                 \
     window_shadow                on             \
     window_animation_duration    0.0            \
     window_opacity_duration      0.0            \
-    active_window_opacity        1.0            \
+    active_window_opacity        1              \
     normal_window_opacity        0.90           \
     window_opacity               on             \
     insert_feedback_color        0xffd75f5f     \
@@ -38,7 +38,7 @@ yabai -m config                                 \
     mouse_action1                move           \
     mouse_action2                resize         \
     mouse_drop_action            swap           \
-    external_bar                 main:20:0
+    external_bar                 main:40:0
 
 
 echo "yabai configuration loaded.."
