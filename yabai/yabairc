@@ -40,5 +40,7 @@ yabai -m config                                 \
     mouse_drop_action            swap           \
     external_bar                 main:40:0
 
+borders
 
 echo "yabai configuration loaded.."
+
