@@ -160,7 +160,7 @@ font_family      Iosevka Nerd Font
 #: suffix means use pts. For example::
 
 modify_font underline_position 4
-modify_font underline_thickness 150%
+modify_font underline_thickness 100%
 modify_font strikethrough_position 4px
 
 #: Additionally, you can modify the size of the cell in which each
@@ -1786,6 +1786,7 @@ map alt+right send_text all \x1b\x66
 #::  to the working directory of the current window using::
 
 #::      map ctrl+alt+enter launch --cwd=current
+# map ctrl+shift+n launch --cwd=current --type=tab
 
 #::  You can open a new window that is allowed to control kitty via
 #::  the kitty remote control facility with launch --allow-remote-
@@ -1800,6 +1801,8 @@ map alt+right send_text all \x1b\x66
 #::      map ctrl+n launch --location=neighbor
 #::      map ctrl+f launch --location=first
 
+# map ctrl+n launch --location=neighbor --cwd=current
+
 #::  For more details, see launch
 #::  <https://sw.kovidgoyal.net/kitty/launch/>.
 
@@ -1807,6 +1810,7 @@ map alt+right send_text all \x1b\x66
 
 # map kitty_mod+n new_os_window
 # map cmd+n       new_os_window
+map cmd+n       new_os_window_with_cwd  
 
 #::  Works like new_window above, except that it opens a top-level OS
 #::  window. In particular you can use new_os_window_with_cwd to open
@@ -2253,6 +2257,6 @@ map alt+right send_text all \x1b\x66
 #: }}}
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Latte
+# Gruvbox Dark
 include current-theme.conf
 # END_KITTY_THEME
