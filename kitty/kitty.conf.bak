@@ -6,7 +6,7 @@
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-font_family      Iosevka Nerd Font
+font_family        Iosevka Nerd Font Mono
 # bold_font        JetBrains Mono Bold
 # italic_font      JetBrains Mono Italic
 # bold_italic_font JetBrains Mono Bold Italic
@@ -187,6 +187,9 @@ modify_font strikethrough_position 4px
 #: }}}
 
 #: Cursor customization {{{
+
+cursor_trail 1
+
 
 # cursor #cccccc
 
@@ -2257,6 +2260,6 @@ map cmd+n       new_os_window_with_cwd
 #: }}}
 
 # BEGIN_KITTY_THEME
-# Gruvbox Dark
+# Gruvbox Material Dark Medium
 include current-theme.conf
 # END_KITTY_THEME

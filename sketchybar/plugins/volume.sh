@@ -1,20 +1,20 @@
 #!/bin/sh
 
-# The volume_change event supplies a $INFO variable in which the current volume
-# percentage is passed to the script.
-
 if [ "$SENDER" = "volume_change" ]; then
   VOLUME="$INFO"
-
-  case "$VOLUME" in
-    [6-9][0-9]|100) ICON="󰕾"
-    ;;
-    [3-5][0-9]) ICON="󰖀"
-    ;;
-    [1-9]|[1-2][0-9]) ICON="󰕿"
-    ;;
-    *) ICON="󰖁"
-  esac
-
+  # Icons to use
+  ICONS=("" "" "󰕾" "󰕾")
+  # Set index based on specific thresholds
+  if [ "$VOLUME" -eq 0 ]; then
+    INDEX=0  # Muted
+  elif [ "$VOLUME" -le 6 ]; then
+    INDEX=1  # Very low
+  elif [ "$VOLUME" -le 13 ]; then
+    INDEX=2  # Low
+  else
+    INDEX=3  # Normal
+  fi
+  # Get the corresponding icon
+  ICON="${ICONS[$INDEX]}"
   sketchybar --set "$NAME" icon="$ICON" label="$VOLUME%"
 fi
