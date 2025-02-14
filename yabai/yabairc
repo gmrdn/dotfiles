@@ -10,16 +10,16 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
-# focus window after active space changes
-yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
-
-# focus window after active display changes
-yabai -m signal --add event=display_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
+# # focus window after active space changes
+# yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
+#
+# # focus window after active display changes
+# yabai -m signal --add event=display_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
 
 # global settings
 yabai -m config                                 \
     mouse_follows_focus          on             \
-    focus_follows_mouse          autoraise      \
+    focus_follows_mouse          off            \
     window_origin_display        default        \
     window_placement             second_child   \
     window_zoom_persist          on             \
