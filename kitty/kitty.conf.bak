@@ -188,7 +188,7 @@ modify_font strikethrough_position 4px
 
 #: Cursor customization {{{
 
-cursor_trail 1
+cursor_trail 0
 
 
 # cursor #cccccc
@@ -2260,6 +2260,6 @@ map cmd+n       new_os_window_with_cwd
 #: }}}
 
 # BEGIN_KITTY_THEME
-# Gruvbox Dark Hard
+# GitHub Dark Dimmed
 include current-theme.conf
 # END_KITTY_THEME
