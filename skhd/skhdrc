@@ -88,6 +88,17 @@ alt - 7 : yabai -m space --focus 7
 alt - 8 : yabai -m space --focus 8
 alt - 9 : yabai -m space --focus 9
 alt - 0 : yabai -m space --focus 10
+# same on second row
+alt - q : yabai -m space --focus 1
+alt - w : yabai -m space --focus 2
+alt - e : yabai -m space --focus 3
+alt - r : yabai -m space --focus 4
+alt - t : yabai -m space --focus 5
+alt - y : yabai -m space --focus 6
+alt - u : yabai -m space --focus 7
+alt - i : yabai -m space --focus 8
+alt - o : yabai -m space --focus 9
+alt - p : yabai -m space --focus 10
 
 # # focus window
 ctrl - h : yabai -m window --focus west
@@ -187,6 +198,17 @@ ctrl + shift - 7 : yabai -m window --space 7
 ctrl + shift - 8 : yabai -m window --space 8
 ctrl + shift - 9 : yabai -m window --space 9
 ctrl + shift - 0 : yabai -m window --space 10
+# same with first row
+ctrl + shift - q : yabai -m window --space 1
+ctrl + shift - w : yabai -m window --space 2
+ctrl + shift - e : yabai -m window --space 3
+ctrl + shift - r : yabai -m window --space 4
+ctrl + shift - t : yabai -m window --space 5
+ctrl + shift - y : yabai -m window --space 6
+ctrl + shift - u : yabai -m window --space 7
+ctrl + shift - i : yabai -m window --space 8
+ctrl + shift - o : yabai -m window --space 9
+ctrl + shift - p : yabai -m window --space 10
 
 # focus monitor
 # ctrl + alt - z  : yabai -m display --focus prev
@@ -199,10 +221,7 @@ ctrl + shift - 0 : yabai -m window --space 10
 # set insertion point in focused container
 # ctrl + alt - h : yabai -m window --insert west
 
-# open a new iTerm window
+# open a new kitty window
 alt - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 
-# .blacklist [
-#     "tableplus"
-# ]
