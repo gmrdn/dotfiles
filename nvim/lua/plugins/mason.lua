@@ -1,4 +1,0 @@
-return {
-  "mason.nvim",
-  opts = {}
-}
