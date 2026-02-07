@@ -3,6 +3,15 @@ return {
   ---@type snacks.Config
   opts = {
     picker = {
+      sources = {
+        explorer = {
+          layout = {
+            layout = {
+              width = 60,
+            },
+          },
+        },
+      },
       formatters = {
         file = {
           filename_first = true, -- display filename before the file path
