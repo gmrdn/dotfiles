@@ -1,11 +1,11 @@
 #!/bin/bash
 
 options=(
-	style=round
-	width=5.0
-	hidpi=off
-	active_color=0xffb16286
-	inactive_color=0xff414550
+    style=round
+    width=3.0
+    hidpi=on
+    active_color=0xff458588
+    inactive_color=0xff3c3836
 )
 
 borders "${options[@]}"
