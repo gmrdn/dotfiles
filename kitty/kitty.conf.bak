@@ -694,7 +694,7 @@ cursor_trail 0
 #: start_resizing_window. The cells value is used for horizontal
 #: resizing, and the lines value is used for vertical resizing.
 
-# window_border_width 0.5pt
+window_border_width 0.5pt
 
 #: The width of window borders. Can be either in pixels (px) or pts
 #: (pt). Values in pts will be rounded to the nearest number of pixels
@@ -739,11 +739,11 @@ window_padding_width 24
 #: this option. Using a value of center means the cell area will be
 #: placed centrally. A value of top-left means the padding will be
 #: only at the bottom and right edges.
-# active_border_color #9ccfd8
+# active_border_color #458588
 
 #: The color for the border of the active window. Set this to none to
 #: not draw borders around the active window.
-# inactive_border_color #908caa
+# inactive_border_color #3c3836
 
 #: The color for the border of inactive windows.
 
@@ -2258,6 +2258,6 @@ map cmd+n       new_os_window_with_cwd
 #: }}}
 
 # BEGIN_KITTY_THEME
-# Tokyo Night Moon
+# Tokyo Night
 include current-theme.conf
 # END_KITTY_THEME
