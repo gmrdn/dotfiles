@@ -27,7 +27,7 @@ return {
           --- * right: truncate the end of the path
           ---@type "left"|"center"|"right"
           truncate = "right",
-          min_width = 40, -- minimum length of the truncated path
+          min_width = 80, -- minimum length of the truncated path
           filename_only = false, -- only show the filename
           icon_width = 2, -- width of the icon (in characters)
           git_status_hl = true, -- use the git status highlight group for the filename
