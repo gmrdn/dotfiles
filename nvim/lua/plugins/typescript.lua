@@ -3,8 +3,9 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        ts_ls = {
+        vtsls = {
           settings = {
+            complete_function_calls = true,
             typescript = {
               inlayHints = {
                 includeInlayParameterNameHints = "all",
@@ -14,6 +15,14 @@ return {
                 includeInlayPropertyDeclarationTypeHints = true,
                 includeInlayFunctionLikeReturnTypeHints = true,
                 includeInlayEnumMemberValueHints = true,
+              },
+              suggest = {
+                completeFunctionCalls = true,
+                includeCompletionsForModuleExports = true,
+                includeCompletionsWithInsertText = true,
+              },
+              updateImportsOnFileMove = {
+                enabled = "always",
               },
             },
             javascript = {
@@ -26,11 +35,18 @@ return {
                 includeInlayFunctionLikeReturnTypeHints = true,
                 includeInlayEnumMemberValueHints = true,
               },
+              suggest = {
+                completeFunctionCalls = true,
+              },
+              updateImportsOnFileMove = {
+                enabled = "always",
+              },
             },
-            ["typescript ts_ls"] = {
-              suggestCompletionsFromClasses = true,
-              includeCompletionsForModuleExports = true,
-              includeCompletionsWithInsertText = true,
+            vtsls = {
+              autoUseWorkspaceTsdk = true,
+              experimental = {
+                maxInlayHintLength = 30,
+              },
             },
           },
         },
