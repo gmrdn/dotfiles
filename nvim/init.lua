@@ -1,7 +1,9 @@
 vim.opt.termguicolors = true
 vim.cmd.colorscheme("habamax")
 
+-- =====================
 -- options
+-- =====================
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
@@ -77,4 +79,78 @@ vim.opt.diffopt:append("linematch:60")
 vim.opt.redrawtime = 10000
 vim.opt.maxmempattern = 20000
 
+-- =====================
+-- keymaps
+-- =====================
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
+vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result (centered)" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down (centered)" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up (centered)" })
+
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down (centered)" })
+
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
+
+vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { desc = "Split window vertically" })
+vim.keymap.set("n", "<leader>sh", ":split<CR>", { desc = "Split window horizontally" })
+
+vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
+
+-- copy file path
+vim.keymap.set("n", "<leader>yp", "<cmd>let @+ = expand('%:~:.')<cr>", { noremap = true, silent = true })
+
+-- Switch to normal mode
+vim.keymap.set("i", "jk", "<Esc>")
+vim.keymap.set("i", "kj", "<Esc>")
+vim.keymap.set("i", "jj", "<Esc>")
+vim.keymap.set("i", "kk", "<Esc>")
+
+
+
+-- =====================
+-- autocomds
+-- =====================
+-- highlight yanked text
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = augroup,
+	callback = function()
+		vim.hl.on_yank()
+	end,
+})
+
+-- return to last cursor position
+vim.api.nvim_create_autocmd("BufReadPost", {
+	group = augroup,
+	desc = "Restore last cursor position",
+	callback = function()
+		if vim.o.diff then -- except in diff mode
+			return
+		end
+
+		local last_pos = vim.api.nvim_buf_get_mark(0, '"') -- {line, col}
+		local last_line = vim.api.nvim_buf_line_count(0)
+
+		local row = last_pos[1]
+		if row < 1 or row > last_line then
+			return
+		end
+
+		pcall(vim.api.nvim_win_set_cursor, 0, last_pos)
+	end,
+})
+-- wrap, linebreak and spellcheck on markdown and text files
+vim.api.nvim_create_autocmd("FileType", {
+	group = augroup,
+	pattern = { "markdown", "text", "gitcommit" },
+	callback = function()
+		vim.opt_local.wrap = true
+		vim.opt_local.linebreak = true
+		vim.opt_local.spell = true
+	end,
+})
