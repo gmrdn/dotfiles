@@ -5,15 +5,16 @@ return {
       servers = {
         eslint = {
           settings = {
-            -- Use workspace folder for finding config
             workingDirectory = { mode = "auto" },
-            -- Auto-detect flat config
             experimental = {
-              useFlatConfig = nil, -- auto-detect
+              useFlatConfig = nil,
             },
-            -- Use project's node_modules
-            nodePath = nil, -- auto-detect from workspace
+            nodePath = nil,
             packageManager = "npm",
+            validate = "on",
+            format = "on",
+            rulesCustomizations = {},
+            run = "onType",
           },
         },
       },
