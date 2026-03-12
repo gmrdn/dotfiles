@@ -24,6 +24,9 @@ return {
               updateImportsOnFileMove = {
                 enabled = "always",
               },
+              format = {
+                insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = false,
+              },
             },
             javascript = {
               inlayHints = {
@@ -41,12 +44,22 @@ return {
               updateImportsOnFileMove = {
                 enabled = "always",
               },
+              format = {
+                insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = false,
+              },
             },
             vtsls = {
               autoUseWorkspaceTsdk = true,
               experimental = {
                 maxInlayHintLength = 30,
               },
+            },
+          },
+        },
+        eslint = {
+          settings = {
+            ["/eslint.config"] = {
+              alwaysTryTypes = true,
             },
           },
         },
