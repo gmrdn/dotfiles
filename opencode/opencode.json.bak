@@ -1,0 +1,23 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "explore": {
+      "model": "github-copilot/grok-code-fast-1"
+    }
+  },
+  "mcp": {
+    "linear": {
+      "type": "remote",
+      "url": "https://mcp.linear.app/mcp",
+      "enabled": true
+    },
+    "notion": {
+      "type": "remote",
+      "url": "https://mcp.notion.com/mcp",
+      "enabled": true
+    }
+  },
+  "plugin": [
+    "oh-my-opencode-slim"
+  ]
+}
