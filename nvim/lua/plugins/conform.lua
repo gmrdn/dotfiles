@@ -10,6 +10,9 @@ return {
             jsonc = { "prettier" },
         },
         formatters = {
+            eslint_d = {
+                timeout_ms = 30000,
+            },
             prettier = {
                 env = {
                     cwd = function(bufnr)
