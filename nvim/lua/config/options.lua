@@ -36,3 +36,6 @@ vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
 vim.opt.wildignore:append({ "*/node_modules/*" })
 -- -- -- disable lazyvim autoformat
 -- vim.g.autoformat = false
+--
+-- copilot suggestions
+vim.g.ai_cmp = false
